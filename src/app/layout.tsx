@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
-import MetaPixel from '@/components/MetaPixel';
+import GTM from '@/components/GTM';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,7 +15,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='pt-BR'>
       <body className={inter.className + ' bg-white text-gray-900 antialiased'}>
-        <MetaPixel />
+        <GTM />
+        <noscript>
+          <iframe
+            src='https://www.googletagmanager.com/ns.html?id=GTM-N2C9QFF'
+            height='0'
+            width='0'
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <nav className='border-b border-gray-100 sticky top-0 bg-white/90 backdrop-blur z-50'>
           <div className='max-w-5xl mx-auto px-4 h-14 flex items-center justify-between'>
             <Link href='/' className='font-bold text-gray-900 tracking-tight'>
